@@ -1,5 +1,5 @@
 import PIXI from "pixi-sound";
-import { SoundData, SoundLibrary } from "./sounds.library.";
+import { SoundData, SoundLibrary } from "./sounds.library";
 
 export default class SoundManager {
     constructor() {

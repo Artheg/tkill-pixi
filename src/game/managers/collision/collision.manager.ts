@@ -1,5 +1,5 @@
 import * as PIXI from "pixi.js";
-import { IColliderContainer } from "game/screens/game/iColliderContainer";
+import { IColliderContainer } from "game/screens/game/obstacles/iColliderContainer";
 
 //Detects collisions of mainCollider with obstacleCollider's 
 //Fires an event in case of the collision

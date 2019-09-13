@@ -14,7 +14,7 @@ export class SoundLibrary {
 
   public static readonly CHIME: SoundData = SoundLibrary.createSoundData(
     "beep",
-    "wav"
+    "ogg"
   );
 
   private static createSoundData(

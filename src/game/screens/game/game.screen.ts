@@ -5,7 +5,7 @@ import PlayerContainer from "./player-container";
 import Container from "./obstacles/container";
 import CollisionManager from "../../managers/collision/collision.manager";
 import SoundManager from "../../managers/sound/sound.manager";
-import { SoundLibrary } from "../../managers/sound/sounds.library.";
+import { SoundLibrary } from "../../managers/sound/sounds.library";
 
 export default class GameScreen extends BaseScreen {
     private timePassed: number = 0;

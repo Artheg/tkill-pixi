@@ -36,7 +36,7 @@ export default class Container extends PIXI.Container implements IColliderContai
     }
 
     public destroyCoin(coin: PIXI.Container) {
-        this.coins = this.coins.splice(this.coins.indexOf(coin), 1);
+        this.coins.splice(this.coins.indexOf(coin), 1);
         this.eventEmitter.emit(Container.E_ELEMENT_DESTROYED, coin);
         this.canvas.removeChildAt(this.canvas.getChildIndex(coin));
         coin.destroy();
