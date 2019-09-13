@@ -1,11 +1,15 @@
-import * as PIXI from "pixi.js";
 import Coin from "./coin";
+import { IColliderContainer } from "./iColliderContainer";
 
-export default class Container extends PIXI.Container {
+export default class Container extends PIXI.Container implements IColliderContainer {
     private canvas: PIXI.Container;
+    private coins: PIXI.Container[];
+
     constructor() {
         super();
         this.canvas = new PIXI.Container();
+        this.coins = [];
+
         this.addChild(this.canvas);
         const coinCount = 10;
         for (let i = 0; i < coinCount; i++) {
@@ -21,7 +25,16 @@ export default class Container extends PIXI.Container {
             coin.position.x = rotatedPoint.x;
             coin.position.y = rotatedPoint.y;
 
+            this.coins.push(coin);
         }
+    }
+
+    public destroyCoin(coin: PIXI.Container) {
+        
+    }
+
+    public getColliders(): PIXI.Container[] {
+        return this.coins;
     }
 
     public update(rotateBy: number): void {
