@@ -1,3 +1,4 @@
+import "pixi-sound";
 import BaseScreen from "../base.screen";
 import PlayerContainer from "./player-container";
 import Container from "./container";
