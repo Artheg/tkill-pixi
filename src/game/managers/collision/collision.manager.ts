@@ -1,4 +1,4 @@
-;
+import * as PIXI from "pixi.js";
 import { IColliderContainer } from "game/screens/game/iColliderContainer";
 
 //Detects collisions of mainCollider with obstacleCollider's 
@@ -24,6 +24,11 @@ export default class CollisionManager {
 
     public addObstacleCollider(obstacleCollider: IColliderContainer): void {
         this.obstacleColliders = this.obstacleColliders.concat(obstacleCollider.getColliders());
+        obstacleCollider.eventEmitter.addListener("E_ELEMENT_DESTROYED", (element: any) => {
+            this.stop();
+            this.obstacleColliders.splice(this.obstacleColliders.indexOf(element), 1);
+            this.start();
+        })
     }
 
     public start(): void {

@@ -1,7 +1,13 @@
+import * as PIXI from "pixi.js";
 import Coin from "./coin";
 import { IColliderContainer } from "./iColliderContainer";
 
 export default class Container extends PIXI.Container implements IColliderContainer {
+
+    public static readonly E_ELEMENT_DESTROYED: string = "E_ELEMENT_DESTROYED";
+
+    public eventEmitter: PIXI.utils.EventEmitter = new PIXI.utils.EventEmitter();
+
     private canvas: PIXI.Container;
     private coins: PIXI.Container[];
 
@@ -30,7 +36,10 @@ export default class Container extends PIXI.Container implements IColliderContai
     }
 
     public destroyCoin(coin: PIXI.Container) {
-        
+        this.coins = this.coins.splice(this.coins.indexOf(coin), 1);
+        this.eventEmitter.emit(Container.E_ELEMENT_DESTROYED, coin);
+        this.canvas.removeChildAt(this.canvas.getChildIndex(coin));
+        coin.destroy();
     }
 
     public getColliders(): PIXI.Container[] {
