@@ -1,11 +1,11 @@
-import * as PIXI from "pixi.js";
+import { Application, Point } from "pixi.js";
 
 export class AppHelper {
 
-    constructor(private app: PIXI.Application) {
+    constructor(private app: Application) {
     }
 
-    public getMousePos(): PIXI.Point {
+    public getMousePos(): Point {
         return this.app.renderer.plugins.interaction.mouse.global;
     }
 }

@@ -1,6 +1,6 @@
-import * as PIXI from "pixi.js";
+import { Container, utils } from "pixi.js";
 
-export interface IColliderContainer{ 
-    getColliders(): PIXI.Container[];
-    eventEmitter: PIXI.utils.EventEmitter;
+export interface IColliderContainer {
+  eventEmitter: utils.EventEmitter;
+  getColliders(): Container[];
 }

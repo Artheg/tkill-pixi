@@ -1,7 +1,7 @@
-import * as PIXI from "pixi.js";
+import { Application, Container } from "pixi.js";
 
-export default class BaseScreen extends PIXI.Container {
-    constructor(protected app: PIXI.Application) {
+export default class BaseScreen extends Container {
+    constructor(protected app: Application) {
         super();
     }
 }

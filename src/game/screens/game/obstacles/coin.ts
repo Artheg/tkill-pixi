@@ -1,11 +1,10 @@
-import * as PIXI from "pixi.js";
+import { Container, Sprite } from "pixi.js";
 
-
-export default class Coin extends PIXI.Container{
-    private image: PIXI.Sprite;
+export default class Coin extends Container{
+    private image: Sprite;
     constructor() {
         super();
-        this.image = PIXI.Sprite.from("assets/img/coin.png");
+        this.image = Sprite.from("assets/img/coin.png");
         this.addChild(this.image);
     }
 }
